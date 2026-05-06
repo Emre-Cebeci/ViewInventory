@@ -34,7 +34,7 @@ namespace ViewInventory
         /// <summary>
         /// Gets the version of this plugin.
         /// </summary>
-        public override Version Version => new Version(1, 0, 0, 0);
+        public override Version Version => new Version(1, 0, 1);
 
         /// <summary>
         /// Initializes a new instance of the TestPlugin class.
@@ -114,7 +114,7 @@ namespace ViewInventory
                     string dyestuff = GetItemsString(li.TPlayer.dye, NetItem.DyeSlots);
                     string misc = GetItemsString(li.TPlayer.miscEquips, NetItem.MiscEquipSlots);
                     string miscDye = GetItemsString(li.TPlayer.miscDyes, NetItem.MiscDyeSlots);
-                    string trash = string.Format("【[i/s{0}:{1}]】 ", li.TPlayer.trashItem.stack, li.TPlayer.trashItem.netID);
+                    string trash = string.Format("【[i/s{0}:{1}]】 ", li.TPlayer.trashItem.stack, li.TPlayer.trashItem.type);
 
                     string pig = GetItemsFromChestString(li.TPlayer.bank, NetItem.PiggySlots);
                     string safe = GetItemsFromChestString(li.TPlayer.bank2, NetItem.SafeSlots);
@@ -218,7 +218,7 @@ namespace ViewInventory
                     string dyestuff = GetItemsString(li.TPlayer.dye, NetItem.DyeSlots);
                     string misc = GetItemsString(li.TPlayer.miscEquips, NetItem.MiscEquipSlots);
                     string miscDye = GetItemsString(li.TPlayer.miscDyes, NetItem.MiscDyeSlots);
-                    string trash = string.Format("【[i/s{0}:{1}]】 ", li.TPlayer.trashItem.stack, li.TPlayer.trashItem.netID);
+                    string trash = string.Format("【[i/s{0}:{1}]】 ", li.TPlayer.trashItem.stack, li.TPlayer.trashItem.type);
 
                     string pig = GetItemsFromChestString(li.TPlayer.bank, NetItem.PiggySlots);
                     string safe = GetItemsFromChestString(li.TPlayer.bank2, NetItem.SafeSlots);
@@ -369,9 +369,9 @@ namespace ViewInventory
                 if (Model == 0 && !item.IsAir)
                 {
                     if (item.prefix != 0)
-                        sb.Append(string.Format("【[i/p{0}:{1}]】 ", item.prefix, item.netID));
+                        sb.Append(string.Format("【[i/p{0}:{1}]】 ", item.prefix, item.type));
                     else
-                        sb.Append(string.Format("【[i/s{0}:{1}]】 ", item.stack, item.netID));
+                        sb.Append(string.Format("【[i/s{0}:{1}]】 ", item.stack, item.type));
                 }
                 if (Model == 1 && !item.IsAir)
                 {
@@ -394,9 +394,9 @@ namespace ViewInventory
                 if (Model == 0 && !item.IsAir)
                 {
                     if (item.prefix != 0)
-                        sb.Append(string.Format("【[i/p{0}:{1}]】 ", item.prefix, item.netID));
+                        sb.Append(string.Format("【[i/p{0}:{1}]】 ", item.prefix, item.type));
                     else
-                        sb.Append(string.Format("【[i/s{0}:{1}]】 ", item.stack, item.netID));
+                        sb.Append(string.Format("【[i/s{0}:{1}]】 ", item.stack, item.type));
                 }
 
                 if (Model == 1 && !item.IsAir)
